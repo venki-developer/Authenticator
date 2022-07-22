@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: white; }
+  body .main-div {
+    width: 1000px;
+    height: 50vh;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); }
+    body .main-div .sign-div {
+      display: flex;
+      flex-direction: row; }
+      body .main-div .sign-div .signup-div {
+        width: 500px;
+        height: 30vh;
+        border-right: #F7F7F7 3px solid; }
+      body .main-div .sign-div .signin-div {
+        width: 500px; }

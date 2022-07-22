@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: white; }
+  body nav {
+    background: #F7F7F7; }
+    body nav .brand {
+      font-family: monospace;
+      margin-left: 12%; }
+    body nav .sign-out-div {
+      position: relative;
+      left: 73%;
+      font-weight: 600; }
+      body nav .sign-out-div ul li {
+        color: black; }
+    body nav .logged-in-user {
+      position: relative;
+      right: 20%; }

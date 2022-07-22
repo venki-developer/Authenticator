@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgb(255,255,255);
+    // nav{
+        
+    //     background: #F7F7F7;
+    //     .brand{
+    //         margin-left: 12%;
+    //     }
+    // }
+    .main-div{
+     width:1000px;
+     height: 50vh;
+     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        .sign-div{
+
+            display: flex;
+            flex-direction: row;
+            .signup-div{
+                width: 500px;
+                height:30vh;
+                border-right: #F7F7F7 3px solid;
+            }
+            .signin-div{
+                width: 500px;
+            }
+
+        }
+        
+    }
+}
