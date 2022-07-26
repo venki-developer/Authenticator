@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: white;
+  overflow: hidden; }
+  body div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    body div #div1 {
+      margin-top: 40px;
+      height: 60vh;
+      width: 360px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      border-radius: 20px; }
+      body div #div1 #div-container {
+        width: 100%; }
+      body div #div1 #password-reset a {
+        text-decoration: none; }
+        body div #div1 #password-reset ahover {
+          cursor: pointer;
+          text-decoration: underline; }
+      body div #div1 hr {
+        width: 65%; }

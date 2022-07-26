@@ -1,9 +1,32 @@
-<form for="user" class="control-label" action="profile" method="post">
-    <label>Email 
-        <input type="email"  class="form-control" placeholder="Email" id="email" name="email">
-    </label>
-    <label>Password 
-        <input type="password"  class="form-control" placeholder="Password" id="password" name="password">
-    </label>
-    <button type="submit">submit</button>
-</form>
+<link rel="stylesheet" href="/css/signin.css">
+<body>
+    <div>
+       <div id="div1">
+        <div class="div-container" >
+            <div>
+                <h4>Sign In</h4>
+            </div>
+            <form for="user" class="control-label" action="/users/create-session" method="post">
+                <div class="my-2"> 
+                    <input type="email"  class="form-control" placeholder="Email" id="email" name="email">
+                </div>
+                <div>
+                    <input type="password"  class="form-control" placeholder="Password" id="password" name="password">
+                </div>
+                <div class="my-2">
+                    <input type="submit" value="Sign in" class="btn btn-success">
+            </form>
+        </div>
+        <div class="my-2" id="password-reset">
+            <a href="/users/forgot-password" class="" role="button">Forgot password?</a>
+        </div>
+        <hr>
+        <div class="">
+            <span>Don't Have an Account, Sign Up here</span>
+            <a href="/users/sign-up" class="btn btn-primary my-2" role="button">Sign Up</a>
+        
+        </div>
+
+       </div>
+    </div>
+</body>

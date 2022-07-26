@@ -4,26 +4,37 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const User = require('../models/user');
 
+const bcrypt = require('bcryptjs');
+
 // authenticate using passport.js
 
 passport.use(new LocalStrategy({
 
     usernameField:'email',
     passReqToCallback:true
-},(req,email,password,done)=>{
+},async (req,email,password,done)=>{
     
-    User.findOne({ email:email }, (err, user) => {
-        if(err){
-            console.log('Error in finding user -->Passport');
-            return done(err);
+    try{
+        let user = await User.findOne({ email:email });
+        console.log(password);
+        console.log(user.password);
+        const isMatch =await bcrypt.compare(password, user.password);
+        console.log(isMatch);
+        if(isMatch){
+            return done(null, user);
         }
         if(!user || user.password != password){
 
+            req.flash('error','Invalid username or password');
             console.log('Invalid username/password');
             return done(null,false);
         }
-        return done(null, user);
-    })
+    }catch{
+        console.log('Error in finding user -->Passport');
+        return done(err);
+    }
+        
+    
 }))
 
 // serialzing the user to decide  which key is to be kept in the cookie

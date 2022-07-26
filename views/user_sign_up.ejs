@@ -1,15 +1,38 @@
-
-
-<form for="user" class="control-label" action="create" method="post">
-    <label>Name 
-        <input type="text"  class="form-control" placeholder="Name" id="name" name="name">
-    </label>
-    <label>Email 
-        <input type="email"  class="form-control" placeholder="Email" id="email" name="email">
-    </label>
-    <label>Password 
-        <input type="password"  class="form-control" placeholder="Password" id="password" name="password">
-    </label>
-    <button type="submit">submit</button>
-</form>
-<a href="/users/sign-in" class="">Have Account, Please click here to sign in</a>
+<link rel="stylesheet" href="/css/signup.css">
+<body>
+<div>
+    <div id="div1">
+        <div class="" id="user-icon" style="font-size: 40px;">
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+        <div>
+            <h5>Sign Up</h5>
+        </div>
+        <div id="div-container">
+            <form for="user" class="control-label" action="create" method="post">
+                <div class=""> 
+                    <input type="text"  class="form-control" placeholder="Name" id="name" name="name" required>
+                </div>
+                <div class="my-2">
+                    <input type="email"  class="form-control" placeholder="Email" id="email" name="email" required>
+                </div>
+                <div class="my-2">
+                    <input type="password"  class="form-control" placeholder="Password" id="password" name="password" required>
+                </div>
+                <div class="my-2"> 
+                    <input type="password"  class="form-control" placeholder="Confirm Password" id="confirm_password" name="confirm_password" required>
+                </div>
+                <div class="my-2">
+                    <input type="submit" class="btn btn-success" value="Sign Up">
+                </div>
+                
+            </form>
+        </div>
+        <span class="or">OR</span>
+        <hr>
+        <div>
+            <span>Have Account, Please click here to<span>&nbsp;<a href="/users/sign-in" class="">sign in</a></span></span>
+        </div>
+    </div>
+</div>
+</body>

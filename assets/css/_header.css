@@ -12,10 +12,10 @@ body {
       margin-left: 12%; }
     body nav .sign-out-div {
       position: relative;
-      left: 73%;
+      left: 72%;
       font-weight: 600; }
       body nav .sign-out-div ul li {
         color: black; }
     body nav .logged-in-user {
       position: relative;
-      right: 20%; }
+      right: 8%; }

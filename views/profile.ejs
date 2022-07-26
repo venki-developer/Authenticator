@@ -1,8 +1,26 @@
-<link rel="stylesheet" href="css/profile.css" type="text/css">
-
-<div class="profile-container">
-    <h3><%=locals.user.name%> Profile</h3>
-    <span>Name: <%=locals.user.name%></span>
-    <span>Email:<%=locals.user.email%></span>
-    <a href="/users/update-password" class="btn btn-success"> Change Password</a>
+<link rel="stylesheet" href="/css/profile.css">
+<body>
+    <div class="my-2 d-flex justify-content-center align-items-center">
+        <h3 class="text-capitalize ">Welcome <%=locals.user.name%></h3>
+    </div>
+<div id="div-container">
+    <div class="d-flex justify-center align-items-center flex-column my-5" >
+        <!-- <div id="div-container"> -->
+            <div class="profile-container my-4" id="profile-div" >
+                <div class="my-2" style="font-weight: bold;">
+                    <span class="text-capitalize" >Name: <%=locals.user.name%></span>
+                </div>
+                <div class="my-2" style="font-weight: bold;">
+                    <span>Email: <%=locals.user.email%></span>
+                </div>
+            </div>
+        <!-- </div> -->
+        <div class="">
+            <a href="/users/update-password" class="btn btn-success"> Change Password</a>
+        </div>
+       </div>
 </div>
+   
+    
+
+</body>

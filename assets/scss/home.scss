@@ -6,6 +6,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     background: rgb(255,255,255);
+    overflow: hidden;
     // nav{
         
     //     background: #F7F7F7;
@@ -15,7 +16,7 @@ body{
     // }
     .main-div{
      width:1000px;
-     height: 50vh;
+     height: 60vh;
      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         .sign-div{
 
@@ -23,7 +24,7 @@ body{
             flex-direction: row;
             .signup-div{
                 width: 500px;
-                height:30vh;
+                height:28vh;
                 border-right: #F7F7F7 3px solid;
             }
             .signin-div{

@@ -18,7 +18,10 @@ const session = require('express-session');
 // passport strategy
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
 const MongoStore = require('connect-mongo');
+const flash = require('connect-flash');
+const customMware = require('./config/middleware');
 const sassMiddleware = require('node-sass-middleware');
 app.use(express.json());
 // app.use(cors());
@@ -66,6 +69,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
+app.use(flash());
+app.use(customMware.setFlash);
 // use routes
 app.use('/', require('./routes/index'));
 // Server listening status
