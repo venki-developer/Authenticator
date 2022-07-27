@@ -17,7 +17,7 @@ const { update } = require('../models/user');
 //       .join('')
   
 //   console.log(generatePassword());
-                
+ //Configuring nodemailer               
 let transporter = nodemailer.createTransport({
     service:'gmail',
     auth: {
@@ -25,20 +25,20 @@ let transporter = nodemailer.createTransport({
         pass: process.env.MAIL_PASSWORD
     }
 })
-
+//For rendering sign up page
 module.exports.signup = function (req, res) {
 
     return res.render('user_sign_up', {
         title: 'Authenticator'
     })
 }
-
+//For rendering sign in page
 module.exports.signIn = function (req, res){
     return res.render('user_sign_in', {
         title: 'Authenticator|Sign In'
     })
 }
-
+//For creating the new user
 module.exports.create = async function (req, res) {
     try{
         let user = await User.findOne({email: req.body.email});
@@ -89,19 +89,19 @@ module.exports.create = async function (req, res) {
    
 }
 
-
+// for creating the session
 module.exports.createSession = function (req, res) {
     req.flash('success',"Logged in successfully");
     return res.redirect('/users/profile');
 }
-
+// For rendering the profile
 module.exports.profile = function (req, res) {
     return res.render('profile', {
         title: 'Profile'
     })
 
 }
-
+// Log out related 
 module.exports.destroySession = function(req, res){
     req.logout(function(err){
        if(err){
@@ -114,13 +114,13 @@ module.exports.destroySession = function(req, res){
      
     
 }
-
+// For rendering the forgot form 
 module.exports.forgotForm = function (req, res) {
     return res.render('forgot_password',{
         title:'Authenticator | forgot password'
     });
 }
-
+// For generating the reset password link
 module.exports.sendPassword = function (req, res) {
 
 
@@ -192,13 +192,13 @@ module.exports.sendPassword = function (req, res) {
     //     })
     // }
 }
-
+// For rendering the reset password form
 module.exports.resetPasswordform = function (req, res) {
     return res.render('reset_password_form',{
         title:'Authenticator | Reset Link'
     })
 }
-
+// For updating the password enterered in the reset form
 module.exports.resetPasswordUpdated = function (req, res) {
     let newPassword = req.body.password;
     let userId = req.params.id;
@@ -264,14 +264,14 @@ module.exports.resetPasswordUpdated = function (req, res) {
     
 
 }
-
+// For rendering the update password form
 module.exports.updatePasswordForm = function(req,res){
     return res.render('update_password',{
         title:'Authenticator | update'
     })
 }
 
-
+// For updating the password of the already signed in user
 module.exports.updatePassword =  (req,res)=>{
     if(req.body.password!=req.body.confirmPassword){
         req.flash('error','Passwords don\'t  match');
