@@ -12,7 +12,7 @@ const User = require('../models/user');
 passport.use(new googleStrategy({
     clientID: process.env.cID, 
     clientSecret:process.env.Secret,
-    callbackURL:"http://localhost:8000/users/auth/google/callback"
+    callbackURL:process.env.CB
         
     },
     // accessing credentials from google
