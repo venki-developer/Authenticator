@@ -144,7 +144,7 @@ module.exports.sendPassword = function (req, res) {
                         from: process.env.MAIL_USER,
                         to: user.email,
                         subject:'Forgot password Request from AuthoX',
-                        html:`Please <a href="http://localhost:8000/users/reset/${user._id}/${token}">click</a> here to reset the password`
+                        html:`Please <a href="https://authox.onrender.com/users/reset/${user._id}/${token}">click</a> here to reset the password`
                     }
         
                     transporter.sendMail(mailOptions, function(error, info){
@@ -227,13 +227,13 @@ module.exports.resetPasswordUpdated = function (req, res) {
         if(user.resetToken != req.params.token){
             console.log('User reset token is invalid');
             req.flash('error','Your Password reset link is invalid');
-            return res.redirect('http://localhost:8000/users/forgot-password');
+            return res.redirect('https://authox.onrender.com/users/forgot-password');
             return;
         }
         if(arr[0]==tokenDate){
             console.log('Token expired');
             req.flash('error','Your Password reset link expired');
-            return res.redirect('http://localhost:8000/users/forgot-password');
+            return res.redirect('https://authox.onrender.com/users/forgot-password');
             return;
           }
           if(req.body.password!=req.body.confirmPassword){
@@ -257,7 +257,7 @@ module.exports.resetPasswordUpdated = function (req, res) {
                 return;
             }
             req.flash('success','Password Reset Successfull');
-            return res.redirect('http://localhost:8000/users/sign-in');
+            return res.redirect('https://authox.onrender.com/users/sign-in');
         })
           
     })
