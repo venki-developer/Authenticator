@@ -136,7 +136,7 @@ module.exports.sendPassword = function (req, res) {
                 }
                 if (!user) {
                     
-req.flash('error','User doesn't exists');
+req.flash('error','User doesnt exists');
                     return res.redirect('back');                
 }
                 user.resetToken = token;
