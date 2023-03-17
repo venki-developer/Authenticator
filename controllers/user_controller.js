@@ -135,8 +135,10 @@ module.exports.sendPassword = function (req, res) {
                     console.log(err);
                 }
                 if (!user) {
-                    return res.status(422).json({message: 'User does not exist'});
-                }
+                    
+req.flash('error','User doesn't exists');
+                    return res.redirect('back');                
+}
                 user.resetToken = token;
                 user.expiresIn = Date.now()+1200000;
                 user.save().then((result)=> {
